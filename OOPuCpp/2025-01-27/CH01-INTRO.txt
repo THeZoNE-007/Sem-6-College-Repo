@@ -1,0 +1,81 @@
+What we'll be covering in Ch 01:
+---------------------------------------------------------------------------
+
+1. Software crisis
+2. Software evolution
+3. POP
+4. OOP
+	- Objects
+	- classes
+	- data abstraction
+	- inheritance
+	- polymorphism - same entity, play different roles
+	- dynamic binding - change arguments and it'll run two different 
+	functions with same name
+	- message passing - objects comm each other through msg passing
+5. Advantages of OOP
+6. Application of OOP
+
+---------------------------------------------------------------------------
+
+Q> What is the need of OOP?
+
+Programming:
+- Procedure oriented programming
+- Object oriented programming
+
+There was nothing in Procedure oriented that represented real-life objects
+
+---------------------------------------------------------------------------
+
+ex- turboC had a library "conio.h"
+This wasn't a universal lib, but turboC's own lib.
+Due to this, other compilers couldn't process the code.
+
+Standardizing compilers to follow some rules to form the code so that it
+can run anywhere without knowing internal working of other. - Open Interface
+
+---------------------------------------------------------------------------
+
+For ex- Repeatedly changing the Procedural code to meet different upcoming
+requirements that may result in 
+	- code failure 
+	- not extendable anymore
+	- not extendable = not reusable
+
+Functions were the thing that saved us from doing this much work. 
+But that too, it becomes unmanageable with increasing no.of functions.
+
+---------------------------------------------------------------------------
+
+BINARY
+|
+|
+V
+Assembly
+|
+|
+V
+Procedural oriented
+|
+|
+V
+Object oriented
+
+---------------------------------------------------------------------------
+
+in oops-
+- behavior = functions
+- state = value of attributes at a particular time in objects
+
+Objects : A type of replica of that real world object to be reused
+according to the requirements of the program
+
+---------------------------------------------------------------------------
+
+Benefits:
+
+- real time : a deadline that has to be met
+
+soft real time (manageable if deadline not met) vs 
+hard real time (deadline is uncompromisable)
