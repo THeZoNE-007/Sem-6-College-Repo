@@ -1,5 +1,4 @@
 # LAB Experiment 01
----
 
 ## **Objective 3: SSH Configuration (local login authentication with ssh)**
 
