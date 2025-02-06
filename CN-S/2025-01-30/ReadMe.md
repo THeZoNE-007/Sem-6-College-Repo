@@ -1,7 +1,3 @@
-You're right, the execution part of the **SSH** configuration should be included for completeness, as it shows how to perform the actual login via SSH, similar to how you did with **Telnet**. It was omitted in my previous response. Let me revise and include the SSH execution process so that the full experiment is represented.
-
----
-
 ## **LAB Experiment 01**
 
 ### **Objective 3: SSH Configuration (local login authentication with ssh)**
