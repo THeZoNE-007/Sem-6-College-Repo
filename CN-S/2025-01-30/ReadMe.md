@@ -1,170 +1,139 @@
-# Cisco Router Configuration Explanation
-
-This document provides a detailed explanation of the configuration commands used on a Cisco router in **Cisco Packet Tracer** for setting up user accounts, enabling SSH access, and securing the router for remote management.
-
+# LAB Experiment 01
 ---
+
+## **Objective 3: SSH Configuration (local login authentication with ssh)**
 
 ### **1. `username admin privilege 15 secret iter123`**
-
-- **Command Explanation**:
-  - **`username admin`**: Creates a user with the username **`admin`**.
-  - **`privilege 15`**: Assigns **privilege level 15** (the highest level) to this user, giving them full administrative access.
-  - **`secret iter123`**: Sets the password for the **admin** user to **`iter123`**, and encrypts it in the router’s configuration.
-  
-- **Purpose**: Creates a user with administrative privileges and a secure password for full access to the router.
-
----
+- **Explanation**: Creates a user named **admin** with full administrative privileges (privilege level 15) and sets a secure password **iter123** for login.
+- **Purpose**: Allows full administrative access to the router with a secure password.
 
 ### **2. `username guest privilege 4 secret guest123`**
-
-- **Command Explanation**:
-  - **`username guest`**: Creates a user with the username **`guest`**.
-  - **`privilege 4`**: Assigns **privilege level 4** to this user, providing more limited access than the **admin** user.
-  - **`secret guest123`**: Sets the password for the **guest** user to **`guest123`**, encrypted in the router’s configuration.
-  
-- **Purpose**: Creates a user with **privilege level 4** and a password **`guest123`** for more restricted access compared to the **admin** account.
-
----
+- **Explanation**: Creates a **guest** user with a lower privilege level (4) and sets the password to **guest123**.
+- **Purpose**: Provides limited access to the router for the **guest** user.
 
 ### **3. `line con 0`**
-
-- **Command Explanation**:
-  - **`line con 0`**: Configures the **console line (con)**, which is used for **local management** through the router's **console port**.
-  
-- **Purpose**: Allows you to configure the settings for local console access to the router.
-
----
+- **Explanation**: Configures the **console line (con)**, which is used for local management through the router's console port.
+- **Purpose**: Configures local access for managing the router via console.
 
 ### **4. `login local`**
-
-- **Command Explanation**:
-  - **`login local`**: Specifies that user authentication for the **console line** should be done using the **local username and password database**.
-  
-- **Purpose**: Ensures that users are prompted for a username and password (as defined earlier in the router configuration).
-
----
+- **Explanation**: Specifies that user authentication for the **console line** should use the **local username and password database**.
+- **Purpose**: Ensures users are prompted for a username and password when accessing the router via the console.
 
 ### **5. `exit`**
-
-- **Command Explanation**:
-  - **`exit`**: Exits the current configuration mode and returns you to the global configuration mode.
-  
-- **Purpose**: Exits the console line configuration mode and returns to the main configuration interface.
-
----
+- **Explanation**: Exits from the **line con** configuration mode and returns to global configuration mode.
+- **Purpose**: Allows you to move back to global configuration after configuring console line settings.
 
 ### **6. `line vty 0 4`**
-
-- **Command Explanation**:
-  - **`line vty 0 4`**: Configures the **VTY lines (Virtual Teletype)**, which are used for **remote access** (Telnet or SSH) to the router. The **0 to 4** part specifies that remote access is allowed on the first five VTY lines.
-  
-- **Purpose**: Enables remote access for up to **five simultaneous sessions** to the router.
-
----
+- **Explanation**: Configures the **VTY lines (Virtual Teletype)**, allowing remote access via Telnet or SSH. The **0 to 4** range allows up to five remote sessions.
+- **Purpose**: Enables remote management through VTY lines.
 
 ### **7. `login local`**
-
-- **Command Explanation**:
-  - **`login local`**: Specifies that user authentication for the **VTY lines** should be done using the **local username and password database**.
-  
-- **Purpose**: Ensures that remote users attempting to log in will be prompted for a valid username and password.
-
----
+- **Explanation**: Ensures that remote access via **VTY lines** uses the local username and password database for authentication.
+- **Purpose**: Prompts remote users to log in with their credentials for accessing the router.
 
 ### **8. `transport input ssh`**
-
-- **Command Explanation**:
-  - **`transport input ssh`**: Configures the router to only accept **SSH** for incoming remote connections, disabling **Telnet**.
-  
-- **Purpose**: Enforces the use of **SSH** for secure remote management, preventing the use of **Telnet** which is unencrypted.
-
----
+- **Explanation**: Configures the router to accept **SSH** connections only for remote access, disabling **Telnet**.
+- **Purpose**: Ensures encrypted, secure access to the router via SSH, preventing Telnet (which is unencrypted).
 
 ### **9. `exit`**
-
-- **Command Explanation**:
-  - **`exit`**: Exits from the VTY line configuration mode and returns to global configuration mode.
-  
-- **Purpose**: Exits the VTY line configuration mode.
-
----
+- **Explanation**: Exits from the **line vty** configuration mode and returns to global configuration mode.
+- **Purpose**: Allows you to return to global configuration after modifying remote access settings.
 
 ### **10. `hostname r1`**
-
-- **Command Explanation**:
-  - **`hostname r1`**: Sets the **hostname** of the router to **`r1`**.
-  
-- **Purpose**: Changes the router's name to **`r1`**, which is displayed in the CLI prompt.
-
----
+- **Explanation**: Sets the router’s hostname to **r1**.
+- **Purpose**: Changes the router's name, which will be displayed in the command prompt.
 
 ### **11. `ip domain-name cn.com`**
-
-- **Command Explanation**:
-  - **`ip domain-name cn.com`**: Sets the **domain name** for the router to **`cn.com`**.
-  
-- **Purpose**: This domain name is necessary for generating **RSA keys** for **SSH** and setting up DNS.
-
----
+- **Explanation**: Configures the router's **domain name** to **cn.com**.
+- **Purpose**: Required for generating **RSA keys** for **SSH**.
 
 ### **12. `crypto key generate rsa`**
-
-- **Command Explanation**:
-  - **`crypto key generate rsa`**: Generates an **RSA key pair** for the router, used for **SSH encryption**.
-  - The router will ask: **"How many bits in the modulus [512]?"**.
-  
-- **Purpose**: Generates the **RSA keys** necessary for encrypted **SSH** communication.
-
----
+- **Explanation**: Generates an **RSA key pair** required for **SSH** encryption.
+- **Purpose**: Ensures secure communication through SSH by creating the necessary encryption keys.
 
 ### **13. Prompted to Enter Key Size: `How many bits in the modulus [512]`**
-
-- **Command Explanation**:
-  - You are prompted to specify the number of bits for the **RSA key modulus**. You should enter **1024** bits for better security, though you can also opt for **2048 bits** for even stronger encryption.
-  
-- **Purpose**: The more bits in the RSA key modulus, the stronger the encryption. **1024 bits** is a good balance of security and performance.
-
----
+- **Explanation**: You are prompted to specify the number of bits for the **RSA key modulus**. Typically, **1024 bits** is used for better security.
+- **Purpose**: More bits in the key modulus provide stronger encryption.
 
 ### **14. `ip ssh version 2`**
-
-- **Command Explanation**:
-  - **`ip ssh version 2`**: Configures the router to use **SSH version 2**, which is more secure than version 1.
-  
-- **Purpose**: This ensures that only **SSH version 2** is used for remote access, providing stronger encryption and security.
-
----
+- **Explanation**: Configures the router to use **SSH version 2** for secure remote access.
+- **Purpose**: Ensures SSH version 2 is used, providing stronger security than version 1.
 
 ### **15. `end`**
-
-- **Command Explanation**:
-  - **`end`**: Exits the global configuration mode and takes you back to **privileged EXEC mode**.
-  
+- **Explanation**: Exits global configuration mode and returns to **privileged EXEC mode**.
 - **Purpose**: Ends the configuration session and returns to the normal operational mode.
 
----
-
 ### **16. `exit`**
-
-- **Command Explanation**:
-  - **`exit`**: Closes the current CLI session.
-  
-- **Purpose**: This command ends the current CLI session.
+- **Explanation**: Closes the current CLI session.
+- **Purpose**: Ends the CLI session with the router.
 
 ---
 
-## **Summary**
+## **Objective 2: Telnet Configuration (local login authentication without ssh)**
 
-The above configuration commands are used to:
+### **1. `no transport input ssh`**
+- **Explanation**: Disables **SSH** as a transport method for remote access on the VTY lines.
+- **Purpose**: Removes SSH, allowing Telnet to be configured as the remote access method.
 
-1. **Create user accounts** (`admin` with full access and `guest` with limited access).
-2. **Set up local authentication** for **console** and **remote (VTY)** access.
-3. **Enable SSH** for encrypted remote management and disable Telnet for better security.
-4. **Set the router’s hostname** and **domain name**.
-5. **Generate RSA keys** for secure SSH communication.
-6. **Configure SSH version 2** for the most secure remote access.
+### **2. `no ip ssh version 2`**
+- **Explanation**: Disables **SSH version 2**.
+- **Purpose**: Fully disables SSH and prepares the router for Telnet access.
 
-This sequence of commands secures the router for remote management, creates multiple user accounts with different privilege levels, and ensures encrypted communication via SSH.
+### **3. `line vty 0 4`**
+- **Explanation**: Configures the **VTY lines** (lines 0 to 4) for remote access.
+- **Purpose**: Prepares the router to accept remote Telnet connections.
+
+### **4. `transport input telnet`**
+- **Explanation**: Enables **Telnet** as the transport method for remote access on the VTY lines.
+- **Purpose**: Configures the router to accept **Telnet** connections from remote devices.
+
+### **5. `exit`**
+- **Explanation**: Exits from the **line vty** configuration mode.
+- **Purpose**: Returns to global configuration mode after modifying the VTY lines for Telnet.
 
 ---
 
+### **Remote Connection via Telnet**
+
+#### **6. From PC: `ping 192.168.1.1`**
+- **Explanation**: The **PC** sends a **ping** to the router at IP address **192.168.1.1** to verify network connectivity.
+- **Purpose**: Ensures that the PC can reach the router and that the network path is functioning.
+
+#### **7. From PC: `telnet 192.168.1.1`**
+- **Explanation**: Initiates a **Telnet** connection to the router at **192.168.1.1**.
+- **Purpose**: Attempts to establish a Telnet session to the router from the PC.
+
+#### **8. Login as `admin` user:**
+- **Explanation**: The **admin** user is prompted to enter the **username** and **password**.
+  - Username: **admin**
+  - Password: **iter123** (the previously configured admin password).
+- **Purpose**: Provides **admin** level access to the router after login.
+
+#### **9. From PC: `telnet 192.168.1.1` (again with guest credentials)**
+- **Explanation**: Initiates another **Telnet** session, this time logging in as the **guest** user.
+  - Username: **guest**
+  - Password: **guest123** (the previously configured guest password).
+- **Purpose**: Logs into the router using **guest** credentials.
+
+#### **10. `enable` and entering the guest secret:**
+- **Explanation**: The **guest** user enters **privileged EXEC mode** by typing **`enable`** and entering the **secret password** (`gm123`).
+- **Purpose**: Grants **guest** user higher-level access (privileged mode) on the router.
+
+---
+
+## **Summary of SSH and Telnet Configuration:**
+
+### **SSH Configuration:**
+1. Created users (`admin` and `guest`) with specified privilege levels and passwords.
+2. Configured **local authentication** for console and remote access.
+3. Enabled **SSH** for encrypted remote access, disabling Telnet for security.
+4. Set up RSA encryption keys and SSH version 2 for secure communication.
+5. Secured remote access via SSH for the **admin** and **guest** users.
+
+### **Telnet Configuration:**
+1. Disallowed SSH and enabled **Telnet** for remote access.
+2. Configured the router to accept **Telnet** connections on the **VTY lines**.
+3. Verified network connectivity and successfully connected using Telnet with both **admin** and **guest** users.
+4. Allowed the **guest** user to elevate privileges through the **`enable`** command using the secret password.
+
+This configuration provides a secure setup with both **SSH** (for secure remote access) and **Telnet** (for remote management, albeit less secure), depending on the method chosen for connection.
