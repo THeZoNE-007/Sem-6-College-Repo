@@ -75,7 +75,7 @@
    - **Purpose**: Establishes a secure and authenticated connection between the router and the AAA server.
 
 3. **User Setup:**
-   - Create the following user accounts on the AAA server:
+   - Create the following user accounts (completely yours to set) on the AAA server:
      1. **Username**: `cns1` ; **Password**: `cns123`
      2. **Username**: `cns2` ; **Password**: `cns1234`
    - **Explanation**: Configures AAA server user accounts for authentication.
@@ -211,7 +211,7 @@
    - **Purpose**: Establishes a secure, authenticated connection between the router and the AAA server.
 
 3. **User Setup:**
-   - Create the following user accounts on the AAA server:
+   - Create the following user accounts (completely yours to set) on the AAA server:
      1. **Username**: `cns1` ; **Password**: `iter123`
      2. **Username**: `cns2` ; **Password**: `soa1234`
    - **Explanation**: Sets up valid credentials for remote access.
