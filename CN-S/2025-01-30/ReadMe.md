@@ -2,6 +2,12 @@
 
 ### **Objective 3: SSH Configuration (local login authentication with ssh)**
 
+#### **Pre-requisites:**
+- **x1 PCs -** PC's IP: 192.168.1.10
+- **x1 Switch**
+- **x1 Router -** Router's IP: 192.168.1.1
+- All three connected as shown in given picture.
+
 #### **Configuration Steps (SSH)**:
 - Navigate to the CLI of the Router, then:
 1. **`en`**
