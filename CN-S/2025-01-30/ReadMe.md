@@ -217,7 +217,7 @@
 #### **Checking through PC:**
 
 1. **Enable Privileged EXEC Mode for Guest**:
-   - Namvigate to command prompt from the PC and type the below command.
+   - Namvigate to command prompt of the PC and type the below command:
    - **Command**: `enable`
    - **Explanation**: The **guest** user enters **privileged EXEC mode** by typing the command **`enable`** and entering the **secret password** (`hello`).
    - **Purpose**: Grants **guest** user higher-level access on the router.
