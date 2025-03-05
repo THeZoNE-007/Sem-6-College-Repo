@@ -198,7 +198,7 @@
 ---
 
 ### **Entering Privileged EXEC Mode as a Guest User:**
-- It's related to telnet part, just for show only, not part of objective.
+- It's related to telnet part, just to know, not part of report.
 
 #### **Router configuration:**
 - We navigate to CLI of Router.
