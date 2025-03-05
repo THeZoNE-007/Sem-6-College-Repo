@@ -2,8 +2,14 @@
 
 ### **Objective 2: Remote User Authentication using AAA Server (TACACS) with Telnet**
 
-#### **Configuration Steps (AAA with TACACS):**
+#### **Pre-requisites:**
+- **x2 PCs -** PC1 IP: 10.10.10.2 ; PC2 IP: 10.10.10.3
+- **x1 Server -** Server IP: 10.10.10.1
+- **x1 Switch -** Above 3 connected to this Switch.
+- **x1 Router -** Above switch connected to this Router (It's Router 2901 in this case).
 
+#### **Configuration Steps (AAA with TACACS):**
+Navigate to the CLI of the Router, then:
 1. **`en`**
    - **Explanation**: Enters privileged EXEC mode.
    - **Purpose**: Enables execution of configuration commands.
@@ -25,7 +31,7 @@
    - **Purpose**: Directs authentication requests to the TACACS+ server (replace `<server's IP>` with **10.10.10.1**).
 
 6. **`tacacs-server key server123`**
-   - **Explanation**: Sets the shared secret key for TACACS+ communications.
+   - **Explanation**: Sets the shared secret key for TACACS+ communications. In my case I have set `server123`, you can set yours.
    - **Purpose**: Secures the communication channel between the router and the AAA server.
 
 7. **`line vty 0 5`**
@@ -63,7 +69,7 @@
 2. **Network Configurations:**
    - **Client Name**: Enter the **host name of the Router**.
    - **Client IP**: Enter the router's IP address (**10.10.10.10**).
-   - **Secret**: Enter **server123**.
+   - **Secret**: Enter **server123** (The one we set before).
    - **Server Type**: Select **TACACS**.
    - **Explanation**: Registers the router as a TACACS client.
    - **Purpose**: Establishes a secure and authenticated connection between the router and the AAA server.
@@ -110,14 +116,9 @@
 - Demonstrated the overriding of local authentication when the AAA server is active.
 
 ---
-
-Would you like to proceed with **Objective 3: Remote User Authentication using AAA Server (TACACS) with SSH**? (yes/no)
-
----
-
-## **LAB Experiment 02**
-
 ### **Objective 3: Remote User Authentication using AAA Server (TACACS) with SSH**
+
+#### **Pre-requisites:** Same setup as above objective
 
 #### **Configuration Steps (AAA with TACACS and SSH):**
 
@@ -202,17 +203,17 @@ Would you like to proceed with **Objective 3: Remote User Authentication using A
    - On the server, navigate to the **Services** tab and select **AAA** as the service type.
 
 2. **Network Configurations:**
-   - **Client Name**: Enter the **host name of the Router** (e.g., **R1**).
-   - **Client IP**: Enter the router's IP address (**10.10.10.10**).
-   - **Secret**: Enter **server123**.
+   - **Client Name**: Enter the **host name of the Router** (In this case, **R1**).
+   - **Client IP**: Enter the router's IP address (In this case, **10.10.10.10**).
+   - **Secret**: Enter **server123** (The one we set before).
    - **Server Type**: Choose **TACACS**.
    - **Explanation**: This registers the router as a TACACS client.
    - **Purpose**: Establishes a secure, authenticated connection between the router and the AAA server.
 
 3. **User Setup:**
    - Create the following user accounts on the AAA server:
-     1. **Username**: `cns1` ; **Password**: `cns123`
-     2. **Username**: `cns2` ; **Password**: `cns1234`
+     1. **Username**: `cns1` ; **Password**: `iter123`
+     2. **Username**: `cns2` ; **Password**: `soa1234`
    - **Explanation**: Sets up valid credentials for remote access.
    - **Purpose**: Provides accounts that will be authenticated by the AAA server when users attempt to access the router via SSH.
 
@@ -231,15 +232,10 @@ Would you like to proceed with **Objective 3: Remote User Authentication using A
    - **Purpose**: Tests the SSH-based AAA authentication process.
 
 3. **User Authentication:**
-   - **Prompt**: "User Access Verification" will appear.
-   - **Username**: `cns1`
-   - **Password**: `cns123`
+   - **Prompt**: "Password:" will appear.
+   - **Password**: `iter123`
    - **Explanation**: The AAA server authenticates the user credentials.
    - **Purpose**: Grants access to the router if the credentials are correct.
-
-4. **Note on Local Authentication:**
-   - **Explanation**: If a local user (e.g., created with the command `username admin password cycscse`) exists on the router, attempting to log in with these local credentials will be rejected when the AAA server is active.
-   - **Purpose**: Demonstrates that AAA server authentication overrides local authentication when properly configured.
 
 ---
 
@@ -249,6 +245,3 @@ Would you like to proceed with **Objective 3: Remote User Authentication using A
 - Established secure communication with the AAA server using a shared key and SSH.
 - Generated RSA keys and set SSH version 2 to enable encrypted remote access.
 - Applied AAA authentication to both remote (VTY) and local (console) access.
-- Verified remote access via SSH, ensuring that only credentials validated by the AAA server are accepted.
-
-This configuration experiment demonstrates secure remote access using SSH combined with TACACS+ based AAA authentication, ensuring robust and centralized user management.
