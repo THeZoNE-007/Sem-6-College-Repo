@@ -117,7 +117,7 @@
 
 ### **Objective 2: Telnet Configuration (local login authentication without ssh)**
 
-####**Note:**:
+#### **Note:**
 Since we are doing this on the same router, we are just going to remove the ssh commands that we wrote above and put telnet's commands instead. If you are doing in a completely new router that hasn't been configured, you can follow the same steps as done previously but replacing configurations of ssh with telnet's. Otherwise just log in as **admin** and start writing from Command #2 below.
 
 #### **Pre-requisites:** Same as above !!
