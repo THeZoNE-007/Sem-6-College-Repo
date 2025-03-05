@@ -223,7 +223,7 @@
 
 1. **Verify Network Connectivity:**
    - **Command**: `ping 10.10.10.10`
-   - **Explanation**: PC1 sends a ping to the router's interface to confirm network connectivity.
+   - **Explanation**: PC1 sends a ping to the router's interface to confirm network connectivity through password stored in server.
    - **Purpose**: Ensures that the PC can reach the router.
 
 2. **Initiate SSH Connection:**
