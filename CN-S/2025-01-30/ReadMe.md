@@ -209,7 +209,7 @@
    - **Purpose**: Prepares the router for configuration changes.
 
 2. **`enable secret <secret key>`**
-   - **Explanation**: To set a highly secure password that allows access to privileged EXEC mode on a device. Replace `secret key` with your own key (eg: `hello`).
+   - **Explanation**: To set a highly secure password that allows access to privileged EXEC mode on a device. Replace `<secret key>` with your own key (eg: `hello`).
    - **Purpose**: To enable **admin** access on **guest** users.
 
 ---
