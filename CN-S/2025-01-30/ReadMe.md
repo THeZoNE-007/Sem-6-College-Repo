@@ -3,12 +3,20 @@
 ### **Objective 3: SSH Configuration (local login authentication with ssh)**
 
 #### **Configuration Steps (SSH)**:
+- Navigate to the CLI of the Router, then:
+1. **`en`**
+   - **Explanation**: Enters privileged EXEC mode.
+   - **Purpose**: Enables execution of configuration commands.
 
-1. **`username cnlab01 privilege 15 secret iter123`**
+2. **`config t`**
+   - **Explanation**: Enters global configuration mode.
+   - **Purpose**: Prepares the router for configuration changes.
+
+3. **`username cnlab01 privilege 15 secret iter123`**
    - **Explanation**: Creates an **admin user** named **cnlab01** with full administrative privileges (privilege level 15) and sets a secure password **iter123** for login.
    - **Purpose**: Allows full administrative access to the router with a secure password.
 
-2. **`username cnlabguest privilege 1 secret lab123`**
+4. **`username cnlabguest privilege 1 secret lab123`**
    - **Explanation**: Creates a **guest user** named **cnlabguest** with a lower privilege level (1) and sets the password to **lab123**.
    - **Purpose**: Provides limited access to the router for the **guest** user.
 
@@ -99,29 +107,58 @@
    - **Purpose**: Grants the **guest** user higher-level access to the router after entering the secret password.
 
 ---
+---
 
 ### **Objective 2: Telnet Configuration (local login authentication without ssh)**
 
+####**Note:**:
+Since we are doing this on the same router, we are just going to remove the ssh commands that we wrote above and put telnet's commands instead. If you are doing in a completely new router that hasn't been configured, you can follow the same steps as done previously but replacing configurations of ssh with telnet's. Otherwise just log in as **admin** and start writing from Command #2 below.
+
 #### **Configuration Steps (Telnet)**:
 
-1. **`no transport input ssh`**
-   - **Explanation**: Disables **SSH** as a transport method for remote access on the VTY lines.
-   - **Purpose**: Removes SSH, allowing Telnet to be configured as the remote access method.
+- Navigate to the CLI of the Router, then:
+1. **`en`**
+   - **Explanation**: Enters privileged EXEC mode.
+   - **Purpose**: Enables execution of configuration commands.
 
-2. **`no ip ssh version 2`**
-   - **Explanation**: Disables **SSH version 2**.
-   - **Purpose**: Fully disables SSH and prepares the router for Telnet access.
+2. **`config t`**
+   - **Explanation**: Enters global configuration mode.
+   - **Purpose**: Prepares the router for configuration changes.
 
 3. **`line vty 0 4`**
    - **Explanation**: Configures the **VTY lines** (lines 0 to 4) for remote access.
    - **Purpose**: Prepares the router to accept remote Telnet connections.
 
-4. **`transport input telnet`**
+4. **`no transport input ssh`**
+   - **Explanation**: Disables **SSH** as a transport method for remote access on the VTY lines.
+   - **Purpose**: Removes SSH, allowing Telnet to be configured as the remote access method.
+
+5. **`exit`**
+    - **Explanation**: Exits line configuration mode.
+    - **Purpose**: Returns to global configuration mode.
+
+6. **`no ip ssh version 2`**
+   - **Explanation**: Disables **SSH version 2**.
+   - **Purpose**: Fully disables SSH and prepares the router for Telnet access.
+
+7. **`do write`**
+   - **Explanation**: Saves the current running configuration to the startup configuration.
+   - **Purpose**: Ensures that changes are retained after a reboot.
+
+8. **`do showrun`**
+   - **Explanation**: To display the current active configuration of the router.
+   - **Purpose**: To verify that we have successfully removed the ssh commands.
+
+9. **`line vty 0 4`**
+   - **Explanation**: Configures **VTY lines (0-4)** for remote access (via Telnet or SSH).
+   - **Purpose**: Enables remote management through VTY lines.
+
+10. **`transport input telnet`**
    - **Explanation**: Enables **Telnet** as the transport method for remote access on the VTY lines.
    - **Purpose**: Configures the router to accept **Telnet** connections from remote devices.
 
-5. **`exit`**
-   - **Explanation**: Exits from the **line vty** configuration mode.
+11. **`exit`**
+   - **Explanation**: Exits from the line configuration mode.
    - **Purpose**: Returns to global configuration mode after modifying the VTY lines for Telnet.
 
 ---
@@ -139,7 +176,7 @@
    - **Purpose**: Attempts to establish a Telnet session to the router from the PC.
 
 3. **Login as `cnlab01` User (Telnet)**:
-   - **Explanation**: The **admin** user is prompted to enter the **username** and **password**.
+   - **Explanation**: This **admin** user is prompted to enter the **username** and **password**.
      - Username: **cnlab01**
      - Password: **iter123**
    - **Purpose**: Provides **admin** level access to the router after login.
@@ -151,9 +188,31 @@
      - Password: **lab123**
    - **Purpose**: Logs into the router using **guest** credentials.
 
-5. **Enable Privileged EXEC Mode for Guest**:
+---
+
+### **Entering Privileged EXEC Mode as a Guest User:**
+- It's related to telnet part, just for show only, not part of objective.
+
+#### **Router configuration:**
+- We navigate to CLI of Router.
+- This time we login using **guest** credentials.
+
+1. **`config t`**
+   - **Explanation**: Enters global configuration mode.
+   - **Purpose**: Prepares the router for configuration changes.
+
+2. **`enable secret <secret key>`**
+   - **Explanation**: To set a highly secure password that allows access to privileged EXEC mode on a device. Replace `secret key` with your own key (eg: `hello`).
+   - **Purpose**: To enable **admin** access on **guest** users.
+
+---
+
+#### **Checking through PC:**
+
+1. **Enable Privileged EXEC Mode for Guest**:
+   - Namvigate to command prompt from the PC and type the below command.
    - **Command**: `enable`
-   - **Explanation**: The **guest** user enters **privileged EXEC mode** by typing **`enable`** and entering the **secret password** (`gm123`).
+   - **Explanation**: The **guest** user enters **privileged EXEC mode** by typing the command **`enable`** and entering the **secret password** (`hello`).
    - **Purpose**: Grants **guest** user higher-level access on the router.
 
 ---
