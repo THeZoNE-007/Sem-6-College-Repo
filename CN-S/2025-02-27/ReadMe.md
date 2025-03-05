@@ -9,7 +9,7 @@
 - **x1 Router -** Above switch connected to this Router (It's Router 2901 in this case).
 
 #### **Configuration Steps (AAA with TACACS):**
-Navigate to the CLI of the Router, then:
+- Navigate to the CLI of the Router, then:
 1. **`en`**
    - **Explanation**: Enters privileged EXEC mode.
    - **Purpose**: Enables execution of configuration commands.
