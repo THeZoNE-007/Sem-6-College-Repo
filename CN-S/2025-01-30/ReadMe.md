@@ -197,7 +197,7 @@
 
 ---
 
-### **Entering Privileged EXEC Mode as a Guest User:**
+### **Accessing privileged EXEC Mode while in a guest user account:**
 - It's related to telnet part, just to know, not part of report.
 
 #### **Router configuration:**
