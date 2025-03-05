@@ -116,6 +116,8 @@
 - Demonstrated the overriding of local authentication when the AAA server is active.
 
 ---
+---
+
 ### **Objective 3: Remote User Authentication using AAA Server (TACACS) with SSH**
 
 #### **Pre-requisites:** Same setup as above objective
