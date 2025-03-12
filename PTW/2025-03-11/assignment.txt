@@ -1,0 +1,9 @@
+Using ettercap, demonstrate dns cache poisoning and arpspoofing.
+
+Misdirect your windows system browsing to a different site.
+
+Poison dns cache for www.facebook.com to different IP. (Clear browsing history and cache before testing).
+
+Explain step by step process and take screenshot from your window systems.
+
+Write your IP, your window IP, anda gateway IP. On your wireshark, show traffic from your window systems.
