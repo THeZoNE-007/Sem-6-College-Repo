@@ -21,6 +21,6 @@ class Box {
     double length;
     double width;
     double height;
-};
+}; //length + width + height = 8bytes * 3 = 24 bytes. Remember static is never stored as an object, it's shared by all. Its size to be not considered.
 
 #endif
