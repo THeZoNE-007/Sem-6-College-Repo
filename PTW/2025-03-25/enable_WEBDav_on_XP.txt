@@ -1,0 +1,101 @@
+### **How to Install and Enable WebDAV on Windows XP with XAMPP**  
+If you're trying to set up WebDAV on a **Windows XP machine using XAMPP**, follow these steps:
+
+---
+
+### **Step 1: Enable WebDAV in Apache**
+1. **Open XAMPP Control Panel**  
+   - Start **Apache** from the XAMPP Control Panel.
+   - Make sure **Apache is running** before proceeding.
+
+2. **Locate Apache Configuration File**  
+   - Open the `httpd.conf` file located at:  
+     ```
+     C:\xampp\apache\conf\httpd.conf
+     ```
+   - Use **Notepad** or any text editor.
+
+3. **Enable the WebDAV Module**  
+   - Find these lines (they might be commented out with `#`):  
+     ```
+     LoadModule dav_module modules/mod_dav.so
+     LoadModule dav_fs_module modules/mod_dav_fs.so
+     ```
+   - **Uncomment them** by removing the `#` at the beginning.
+
+4. **Configure WebDAV Directory**  
+   - Scroll to the bottom of `httpd.conf` and **add this configuration**:
+     ```
+     Alias /webdav "C:/xampp/htdocs/webdav"
+     
+     <Location /webdav>
+         DAV On
+         AuthType Basic
+         AuthName "WebDAV"
+         AuthUserFile "C:/xampp/apache/conf/webdav.passwd"
+         Require valid-user
+     </Location>
+     ```
+   - Save the file.
+
+---
+
+### **Step 2: Create the WebDAV Directory**
+1. **Create a Folder**  
+   - Open `C:\xampp\htdocs\`
+   - Create a new folder named **webdav**  
+   - Set permissions: Right-click the folder → **Properties** → **Security** → Give **Full Control** to **Everyone**.
+
+2. **Create a WebDAV User**
+   - Open **Command Prompt (cmd)** and run:
+     ```bash
+     cd C:\xampp\apache\bin
+     htpasswd -c "C:\xampp\apache\conf\webdav.passwd" webdavuser
+     ```
+   - Enter a password when prompted.
+
+---
+
+### **Step 3: Restart Apache**
+- Go back to **XAMPP Control Panel**  
+- Click **Stop** next to Apache, then **Start** it again.
+
+---
+
+### **Step 4: Test WebDAV**
+1. Open your browser and go to:
+   ```
+   http://localhost/webdav
+   ```
+   - It should prompt for a **username** and **password**.
+   - Enter the credentials you created.
+
+2. If you're using another machine on the same network, access:
+   ```
+   http://<Windows-XP-IP>/webdav
+   ```
+
+---
+
+### **Step 5: Upload Files Using cadaver (Linux)**
+On your **attacker machine**, run:
+```bash
+cadaver http://<Windows-XP-IP>/webdav
+```
+Enter the **username** and **password**, then upload:
+```bash
+put meterpreter.php
+```
+
+---
+
+### **Troubleshooting**
+❌ **"403 Forbidden" error?**  
+✅ Ensure the `webdav` folder has the correct permissions.  
+
+❌ **"Could not connect to WebDAV" error?**  
+✅ Check if Apache is running and `httpd.conf` is correctly edited.
+
+---
+
+Now, you should have WebDAV enabled on **Windows XP with XAMPP**! Let me know if you need help. 🚀
