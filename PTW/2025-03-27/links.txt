@@ -1,0 +1,3 @@
+https://chatgpt.com/share/67e4e7e2-33d4-8000-b043-e23d78193b3f
+
+http://targetip/phpmyadmin/sql.php?db=mysql
