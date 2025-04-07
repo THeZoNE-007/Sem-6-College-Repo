@@ -1,0 +1,129 @@
+def isPair(arr):
+    for i in range(0,len(arr)-1,2):
+        if arr[i]==arr[i+1]:
+            return True
+    return False
+
+def search(mat, element):
+    for i in range(5):
+        for j in range(5):
+            if(mat[i][j] == element) or element in mat[i][j]:
+                return i, j
+
+key=input("Enter your key: ")
+key=key.lower()
+
+print("Which two consecutive characters do you want to keep in same position? ")
+
+c1=input()
+c1=c1.lower()
+c2=input()
+c2=c2.lower()
+while (ord(c2)-ord(c1)!=1):
+    print("Please enter consecutive alphabets: ")
+    c1=input()
+    c1=c1.lower()
+    c2=input()
+    c2=c2.lower()
+
+alphabets=[]
+
+for i in range (97,123):
+    if chr(i)==c1:
+        alphabets.append((chr(i),chr(i+1)))
+        continue
+    if chr(i)==c2:
+        continue
+    alphabets.append(chr(i))
+
+diagraph=[[0 for i in range(5)] for j in range(5)]
+l=len(key)
+c=i=j=0
+
+for k in range(l):
+    if key[k] in alphabets:
+        diagraph[i][j]=key[k]
+        alphabets.remove(key[k])
+        j+=1
+        if (j==5):
+            j=0
+            i+=1
+    else:
+        if ((key[k]==c1 or key[k]==c2) and (c1,c2) in alphabets):
+            diagraph[i][j]=(c1,c2)
+            alphabets.remove((c1,c2))
+            j+=1
+            if (j==5):
+                j=0
+                i+=1
+                
+for letter in alphabets:
+    diagraph[i][j]=letter
+    j+=1
+    if (j==5):
+        j=0
+        i+=1
+
+
+for i in diagraph:
+    print(i)
+
+pt=input("Enter the plain text: ")
+pt=pt.lower()
+pta=[le for le in pt]
+while (isPair(pta)):
+    for i in range(0,len(pta)-1,2):
+        if pta[i]!=pta[i+1]:
+            continue
+        elif pta[i]==pta[i+1] and pta[i]=='x':
+            pta.insert(i+1,'z')
+        else:
+            pta.insert(i+1,'x')
+    if len(pta)%2!=0:
+        if pta[-1]=='z':
+            pta.append('x')
+        else:
+            pta.append('z')
+#print(pta)
+
+pairs=[]
+for i in range(0,len(pta)-1,2):
+    pairs.append((pta[i],pta[i+1]))
+print(pairs)
+
+def swap(ct,e1_x,e1_y,e2_x,e2_y):
+    if e1_x==e2_x:
+        if diagraph[e1_x][(e1_y+1)%5]==(c1,c2):
+            ct+=c1
+        else:
+            ct+=(diagraph[e1_x][(e1_y+1)%5])
+        if diagraph[e2_x][(e2_y+1)%5]==(c1,c2):
+            ct+=c1
+        else:
+            ct+=(diagraph[e2_x][(e2_y+1)%5])
+    elif e1_y==e2_y:
+        if diagraph[(e1_x+1)%5][e1_y]==(c1,c2):
+            ct+=c1
+        else:
+            ct+=(diagraph[(e1_x+1)%5][e1_y])
+        if diagraph[(e2_x+1)%5][e2_y]==(c1,c2):
+            ct+=c1
+        else:
+            ct+=(diagraph[(e2_x+1)%5][e2_y])
+    else:
+        if diagraph[e1_x][e2_y]==(c1,c2):
+            ct+=c1
+        else:
+            ct+=(diagraph[e1_x][e2_y])
+        if diagraph[e2_x][e1_y]==(c1,c2):
+            ct+=c1
+        else:
+            ct+=(diagraph[e2_x][e1_y])
+    return ct
+ct=''
+for ele in pairs:
+    e1,e2=ele
+    e1_x,e1_y=search(diagraph,e1)
+    e2_x,e2_y=search(diagraph,e2)
+    ct=swap(ct,e1_x,e1_y,e2_x,e2_y)
+print(ct)
