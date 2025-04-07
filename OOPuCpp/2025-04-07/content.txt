@@ -1,0 +1,6 @@
+1 -- pointer to function
+2 -- local class calling
+3 -- constructor & destructor
+4 -- explicitly calling destructor
+5 -- shallow copy using constructor
+6 -- deep copy
