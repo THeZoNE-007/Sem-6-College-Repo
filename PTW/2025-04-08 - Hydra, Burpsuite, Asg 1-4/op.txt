@@ -1,0 +1,304 @@
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-04-08 09:46 IST
+Nmap scan report for 172.30.16.1
+Host is up (0.0020s latency).
+MAC Address: 00:17:7C:9E:8F:86 (Smartlink Network Systems Limited)
+Nmap scan report for 172.30.16.80
+Host is up (0.0013s latency).
+MAC Address: 00:17:61:12:C8:1C (Private)
+Nmap scan report for 172.30.16.81
+Host is up (0.044s latency).
+MAC Address: 00:17:61:12:DD:D9 (Private)
+Nmap scan report for 172.30.16.98
+Host is up (0.00058s latency).
+MAC Address: AC:1F:6B:27:C8:C2 (Super Micro Computer)
+Nmap scan report for 172.30.16.99
+Host is up (0.00054s latency).
+MAC Address: 3C:D9:2B:07:0B:02 (Hewlett Packard)
+Nmap scan report for 172.30.16.102
+Host is up (0.0012s latency).
+MAC Address: 40:31:3C:E5:DB:23 (Xiaomi Electronics,CO.)
+Nmap scan report for 172.30.16.103
+Host is up (0.0012s latency).
+MAC Address: 90:FB:A6:04:66:26 (Hon Hai Precision Ind.)
+Nmap scan report for 172.30.16.104
+Host is up (0.0012s latency).
+MAC Address: A8:B1:3B:7C:62:42 (HP)
+Nmap scan report for 172.30.16.106
+Host is up (0.053s latency).
+MAC Address: CC:3E:5F:64:8E:46 (Hewlett Packard)
+Nmap scan report for 172.30.16.107
+Host is up (0.0046s latency).
+MAC Address: 2C:3E:CF:FB:D8:2F (Cisco Systems)
+Nmap scan report for 172.30.16.109
+Host is up (0.034s latency).
+MAC Address: B8:AF:67:89:BD:13 (Hewlett Packard)
+Nmap scan report for 172.30.16.110
+Host is up (0.066s latency).
+MAC Address: 8C:85:C1:B5:C8:DF (Aruba, a Hewlett Packard Enterprise Company)
+Nmap scan report for 172.30.16.111
+Host is up (0.031s latency).
+MAC Address: 8C:85:C1:B5:3E:88 (Aruba, a Hewlett Packard Enterprise Company)
+Nmap scan report for 172.30.16.112
+Host is up (0.0017s latency).
+MAC Address: 50:EB:F6:DF:EB:77 (ASUSTek Computer)
+Nmap scan report for 172.30.16.113
+Host is up (0.030s latency).
+MAC Address: 8C:85:C1:B5:26:D8 (Aruba, a Hewlett Packard Enterprise Company)
+Nmap scan report for 172.30.16.117
+Host is up (0.025s latency).
+MAC Address: 40:A6:E8:F7:37:91 (Cisco Systems)
+Nmap scan report for 172.30.16.119
+Host is up (0.0014s latency).
+MAC Address: 8C:EC:4B:CE:E1:2F (Dell)
+Nmap scan report for 172.30.16.120
+Host is up (0.0018s latency).
+MAC Address: 50:EB:F6:E2:E3:8B (ASUSTek Computer)
+Nmap scan report for 172.30.16.124
+Host is up (0.053s latency).
+MAC Address: B8:AF:67:9D:5C:50 (Hewlett Packard)
+Nmap scan report for 172.30.16.126
+Host is up (0.0012s latency).
+MAC Address: 00:E0:4C:0A:F1:74 (Realtek Semiconductor)
+Nmap scan report for 172.30.16.127
+Host is up (0.0011s latency).
+MAC Address: A4:BB:6D:88:8E:09 (Dell)
+Nmap scan report for 172.30.16.129
+Host is up (0.0011s latency).
+MAC Address: 00:E0:4C:0A:F2:76 (Realtek Semiconductor)
+Nmap scan report for 172.30.16.130
+Host is up (0.00011s latency).
+MAC Address: 00:E0:4C:68:00:05 (Realtek Semiconductor)
+Nmap scan report for 172.30.16.131
+Host is up (0.0014s latency).
+MAC Address: 00:E0:4C:0A:EE:DA (Realtek Semiconductor)
+Nmap scan report for 172.30.16.133
+Host is up (0.0011s latency).
+MAC Address: 8C:EC:4B:CB:A4:4A (Dell)
+Nmap scan report for 172.30.16.135
+Host is up (0.0017s latency).
+MAC Address: A4:BB:6D:89:AD:EC (Dell)
+Nmap scan report for 172.30.16.137
+Host is up (0.0016s latency).
+MAC Address: 00:E0:4C:0A:EF:3C (Realtek Semiconductor)
+Nmap scan report for 172.30.16.139
+Host is up (0.0015s latency).
+MAC Address: C0:25:A5:93:14:18 (Dell)
+Nmap scan report for 172.30.16.141
+Host is up (0.0013s latency).
+MAC Address: 00:E0:4C:0B:3C:7C (Realtek Semiconductor)
+Nmap scan report for 172.30.16.143
+Host is up (0.0011s latency).
+MAC Address: 00:E0:4C:0A:F1:E5 (Realtek Semiconductor)
+Nmap scan report for 172.30.16.148
+Host is up (0.0046s latency).
+MAC Address: A4:BB:6D:8A:0C:41 (Dell)
+Nmap scan report for 172.30.16.149
+Host is up (0.0010s latency).
+MAC Address: A4:BB:6D:8A:18:09 (Dell)
+Nmap scan report for 172.30.16.151
+Host is up (0.0020s latency).
+MAC Address: 00:E0:4C:0C:1C:FD (Realtek Semiconductor)
+Nmap scan report for 172.30.16.152
+Host is up (0.00094s latency).
+MAC Address: 00:E0:4C:0A:ED:B6 (Realtek Semiconductor)
+Nmap scan report for 172.30.16.153
+Host is up (0.0012s latency).
+MAC Address: F4:20:15:A7:86:48 (Guangzhou Shiyuan Electronic Technology Company Limited)
+Nmap scan report for 172.30.16.154
+Host is up (0.0021s latency).
+MAC Address: 00:E0:4C:0C:1D:40 (Realtek Semiconductor)
+Nmap scan report for 172.30.16.155
+Host is up (0.0012s latency).
+MAC Address: E4:A8:DF:9E:83:7C (Compal Information (Kunshan))
+Nmap scan report for 172.30.16.157
+Host is up (0.0018s latency).
+MAC Address: 8C:EC:4B:4A:16:94 (Dell)
+Nmap scan report for 172.30.16.158
+Host is up (0.0017s latency).
+MAC Address: 40:C2:BA:7C:A1:5F (Compal Information (Kunshan))
+Nmap scan report for 172.30.16.160
+Host is up (0.0010s latency).
+MAC Address: E4:54:E8:9D:09:40 (Dell)
+Nmap scan report for 172.30.16.161
+Host is up (0.0017s latency).
+MAC Address: 90:FB:A6:9B:E2:5C (Hon Hai Precision Ind.)
+Nmap scan report for 172.30.16.162
+Host is up (0.0015s latency).
+MAC Address: 00:E0:4C:52:F4:79 (Realtek Semiconductor)
+Nmap scan report for 172.30.16.163
+Host is up (0.00097s latency).
+MAC Address: 00:0C:29:74:70:E8 (VMware)
+Nmap scan report for 172.30.16.164
+Host is up (0.00098s latency).
+MAC Address: 00:E0:4C:52:FF:01 (Realtek Semiconductor)
+Nmap scan report for 172.30.16.165
+Host is up (0.0016s latency).
+MAC Address: A4:BB:6D:8A:09:DF (Dell)
+Nmap scan report for 172.30.16.168
+Host is up (0.0014s latency).
+MAC Address: 78:45:C4:3E:1E:BA (Dell)
+Nmap scan report for 172.30.16.170
+Host is up (0.00093s latency).
+MAC Address: DE:02:81:6D:78:70 (Unknown)
+Nmap scan report for 172.30.16.171
+Host is up (0.0016s latency).
+MAC Address: F4:20:15:A7:85:FB (Guangzhou Shiyuan Electronic Technology Company Limited)
+Nmap scan report for 172.30.16.172
+Host is up (0.0015s latency).
+MAC Address: 8C:EC:4B:CE:5E:AE (Dell)
+Nmap scan report for 172.30.16.174
+Host is up (0.00085s latency).
+MAC Address: 8C:EC:4B:CB:A2:3A (Dell)
+Nmap scan report for 172.30.16.178
+Host is up (0.096s latency).
+MAC Address: A8:93:4A:A2:98:A7 (Chongqing Fugui Electronics)
+Nmap scan report for 172.30.16.182
+Host is up (0.0011s latency).
+MAC Address: 00:0C:29:48:5F:D9 (VMware)
+Nmap scan report for 172.30.16.184
+Host is up (0.0011s latency).
+MAC Address: 8C:EC:4B:CE:E6:36 (Dell)
+Nmap scan report for 172.30.16.186
+Host is up (0.0018s latency).
+MAC Address: 00:E0:4C:0B:3D:98 (Realtek Semiconductor)
+Nmap scan report for 172.30.16.187
+Host is up (0.0010s latency).
+MAC Address: 00:E0:4C:0C:1F:26 (Realtek Semiconductor)
+Nmap scan report for 172.30.16.189
+Host is up (0.0019s latency).
+MAC Address: 00:25:11:E3:B8:AD (Elitegroup Computer Systems)
+Nmap scan report for 172.30.16.190
+Host is up (0.0013s latency).
+MAC Address: 8C:EC:4B:CE:E0:D2 (Dell)
+Nmap scan report for 172.30.16.192
+Host is up (0.0017s latency).
+MAC Address: 8C:EC:4B:CC:BE:10 (Dell)
+Nmap scan report for 172.30.16.196
+Host is up (0.0011s latency).
+MAC Address: 00:E0:4C:0A:EE:3D (Realtek Semiconductor)
+Nmap scan report for 172.30.16.198
+Host is up (0.0025s latency).
+MAC Address: 5C:60:BA:BE:90:0F (HP)
+Nmap scan report for 172.30.16.200
+Host is up (0.0015s latency).
+MAC Address: 3C:D9:2B:07:0A:FE (Hewlett Packard)
+Nmap scan report for 172.30.16.201
+Host is up (0.0016s latency).
+MAC Address: 8C:EC:4B:CE:E9:ED (Dell)
+Nmap scan report for 172.30.16.202
+Host is up (0.0015s latency).
+MAC Address: 00:E0:4C:0B:3E:72 (Realtek Semiconductor)
+Nmap scan report for 172.30.16.203
+Host is up (0.0015s latency).
+MAC Address: F4:20:15:A7:86:AF (Guangzhou Shiyuan Electronic Technology Company Limited)
+Nmap scan report for 172.30.16.204
+Host is up (0.0010s latency).
+MAC Address: 50:EB:F6:DF:EA:3C (ASUSTek Computer)
+Nmap scan report for 172.30.16.205
+Host is up (0.0010s latency).
+MAC Address: D4:3D:7E:48:64:28 (Micro-Star Int'l)
+Nmap scan report for 172.30.16.206
+Host is up (0.00098s latency).
+MAC Address: 3C:D9:2B:07:0B:00 (Hewlett Packard)
+Nmap scan report for 172.30.16.208
+Host is up (0.00079s latency).
+MAC Address: A4:BB:6D:8A:08:31 (Dell)
+Nmap scan report for 172.30.16.209
+Host is up (0.00075s latency).
+MAC Address: 00:E0:4C:0C:1D:F9 (Realtek Semiconductor)
+Nmap scan report for 172.30.16.211
+Host is up (0.0013s latency).
+MAC Address: 8C:EC:4B:55:D8:45 (Dell)
+Nmap scan report for 172.30.16.212
+Host is up (0.0012s latency).
+MAC Address: 8C:EC:4B:CE:A3:F6 (Dell)
+Nmap scan report for 172.30.16.214
+Host is up (0.0012s latency).
+MAC Address: 00:E0:4C:0B:3D:00 (Realtek Semiconductor)
+Nmap scan report for 172.30.16.215
+Host is up (0.0012s latency).
+MAC Address: 8C:EC:4B:CE:A7:D0 (Dell)
+Nmap scan report for 172.30.16.217
+Host is up (0.0011s latency).
+MAC Address: 8C:EC:4B:CE:5B:D8 (Dell)
+Nmap scan report for 172.30.16.218
+Host is up (0.0010s latency).
+MAC Address: D4:3D:7E:48:61:2E (Micro-Star Int'l)
+Nmap scan report for 172.30.16.219
+Host is up (0.00099s latency).
+MAC Address: 50:9A:4C:33:B1:F3 (Dell)
+Nmap scan report for 172.30.16.220
+Host is up (0.00095s latency).
+MAC Address: 8C:EC:4B:CE:B3:D3 (Dell)
+Nmap scan report for 172.30.16.221
+Host is up (0.00091s latency).
+MAC Address: D4:3D:7E:48:61:DA (Micro-Star Int'l)
+Nmap scan report for 172.30.16.223
+Host is up (0.00090s latency).
+MAC Address: 8C:EC:4B:CE:AB:86 (Dell)
+Nmap scan report for 172.30.16.226
+Host is up (0.00078s latency).
+MAC Address: E4:A8:DF:9B:A4:C6 (Compal Information (Kunshan))
+Nmap scan report for 172.30.16.227
+Host is up (0.0010s latency).
+MAC Address: 8C:EC:4B:CE:A7:E3 (Dell)
+Nmap scan report for 172.30.16.229
+Host is up (0.00095s latency).
+MAC Address: 8C:EC:4B:CE:5C:23 (Dell)
+Nmap scan report for 172.30.16.230
+Host is up (0.00077s latency).
+MAC Address: F4:20:15:A7:86:CA (Guangzhou Shiyuan Electronic Technology Company Limited)
+Nmap scan report for 172.30.16.231
+Host is up (0.00072s latency).
+MAC Address: 48:4D:7E:E5:B4:30 (Dell)
+Nmap scan report for 172.30.16.232
+Host is up (0.00068s latency).
+MAC Address: 8C:EC:4B:CE:B4:36 (Dell)
+Nmap scan report for 172.30.16.233
+Host is up (0.00065s latency).
+MAC Address: 00:E0:4C:52:F4:5D (Realtek Semiconductor)
+Nmap scan report for 172.30.16.234
+Host is up (0.0013s latency).
+MAC Address: F0:B4:D2:E5:AB:DF (D-Link International)
+Nmap scan report for 172.30.16.236
+Host is up (0.00053s latency).
+MAC Address: 00:E0:4C:53:07:38 (Realtek Semiconductor)
+Nmap scan report for 172.30.16.237
+Host is up (0.00048s latency).
+MAC Address: D4:3D:7E:48:62:A9 (Micro-Star Int'l)
+Nmap scan report for 172.30.16.238
+Host is up (0.0011s latency).
+MAC Address: 50:9A:4C:33:B1:F2 (Dell)
+Nmap scan report for 172.30.16.239
+Host is up (0.0011s latency).
+MAC Address: 48:4D:7E:E5:B3:3E (Dell)
+Nmap scan report for 172.30.16.241
+Host is up (0.0010s latency).
+MAC Address: 8C:EC:4B:55:DB:B7 (Dell)
+Nmap scan report for 172.30.16.242
+Host is up (0.0084s latency).
+MAC Address: 08:8F:C3:B9:89:13 (Compal Information (Kunshan))
+Nmap scan report for 172.30.16.243
+Host is up (0.00097s latency).
+MAC Address: 00:E0:4C:09:6E:F4 (Realtek Semiconductor)
+Nmap scan report for 172.30.16.246
+Host is up (0.00087s latency).
+MAC Address: 50:9A:4C:33:B1:CB (Dell)
+Nmap scan report for 172.30.16.247
+Host is up (0.00089s latency).
+MAC Address: 00:E0:4C:0C:1E:5A (Realtek Semiconductor)
+Nmap scan report for 172.30.16.248
+Host is up (0.00084s latency).
+MAC Address: 8C:EC:4B:5B:A4:E4 (Dell)
+Nmap scan report for 172.30.16.249
+Host is up (0.00082s latency).
+MAC Address: A4:BB:6D:8A:10:06 (Dell)
+Nmap scan report for 172.30.16.253
+Host is up (0.00077s latency).
+MAC Address: 8C:EC:4B:CE:78:04 (Dell)
+Nmap scan report for 172.30.16.254
+Host is up (0.00075s latency).
+MAC Address: 00:E0:4C:52:F7:BA (Realtek Semiconductor)
+Nmap scan report for 172.30.16.167
+Host is up.
+Nmap done: 256 IP addresses (101 hosts up) scanned in 2.38 seconds
