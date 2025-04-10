@@ -9,7 +9,7 @@ def pingSweep(ip):
        
 res=pingSweep(ip)
 count=-1
-with open("findings.txt",'w+') as file:
+with open("q1Output.txt",'w+') as file:
     for line in res.stdout.splitlines("\n"):
          clean_string = line.decode('utf-8').strip()
          if count==-1:
