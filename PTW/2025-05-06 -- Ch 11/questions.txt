@@ -1,0 +1,6 @@
+Describes auto pawm attack and related payload. What data can be gathered with autopawning. 
+How to attach a payload with a pdf?  Mimic the target user,  download pdf and run it. 
+Perform the task and write down the commands used.
+
+
+Describes/execute process to send the pdf to multiple emails (Social Engineering Toolkit).
