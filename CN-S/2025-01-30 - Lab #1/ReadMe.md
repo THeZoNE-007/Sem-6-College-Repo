@@ -152,7 +152,7 @@
    - **Explanation**: Saves the current running configuration to the startup configuration.
    - **Purpose**: Ensures that changes are retained after a reboot.
 
-8. **`do showrun`**
+8. **`do show run`**
    - **Explanation**: To display the current active configuration of the router.
    - **Purpose**: To verify that we have successfully removed the ssh commands.
 
