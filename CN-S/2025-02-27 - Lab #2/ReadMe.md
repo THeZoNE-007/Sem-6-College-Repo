@@ -86,12 +86,12 @@
 #### **Verification Steps (Using Telnet):**
 
 1. **Verify Network Connectivity:**
-   - **Command**: `ping 10.10.10.1`
-   - **Explanation**: PC1 sends a ping to the AAA server to confirm connectivity.
+   - **Command**: `ping 10.10.10.10`
+   - **Explanation**: PC1 sends a ping to the router to confirm connectivity.
    - **Purpose**: Ensures that the network path between the PC and the server is operational.
 
 2. **Initiate Telnet Connection:**
-   - **Command**: `telnet 10.10.10.1`
+   - **Command**: `telnet 10.10.10.10`
    - **Explanation**: Initiates a Telnet session to the AAA server.
    - **Purpose**: Tests the AAA-based authentication process for remote access.
 
