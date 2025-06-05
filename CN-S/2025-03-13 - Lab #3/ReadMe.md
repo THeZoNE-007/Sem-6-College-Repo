@@ -122,17 +122,11 @@ Perform these tests **before and after** applying the ACL:
 
 ---
 ---
-Sure! Here's the **full combined Markdown content** for **Objective 2 and Objective 3** of **Lab Experiment 03** rendered directly here:
+### **Objective 3: Configuration and Verification of an Extended Access List for Permit and Deny to a Remote Server (HTTP / FTP / ICMP)**
 
 ---
 
-# **LAB Experiment 03**
-
-## **Objective 2: Configuration and Verification of a Standard Access List for Permit and Deny to a Remote Server**
-
----
-
-### **Pre-requisites (Network Topology):**
+#### **Pre-requisites (Same Network Topology as Objective 2):**
 
 * **x4 PCs**
 
@@ -141,111 +135,144 @@ Sure! Here's the **full combined Markdown content** for **Objective 2 and Object
   * PC3 IP: 200.100.100.4
   * PC4 IP: 200.100.100.5
 
-* **x1 Switch (2960)**
+* **x1 Switch (2960)** — connects all 4 PCs
 
-  * All 4 PCs are connected to this switch.
+* **x1 Left Router**
 
-* **x1 Router (Left Router)**
+  * PC switch connected to **Gig0/0** (IP: 200.100.100.1)
 
-  * Switch connected to Router’s **Gig0/0**
-  * Default Gateway: **200.100.100.1**
+* **x1 Right Router**
 
-* **x1 Router (Right Router)**
-
-  * Left Router’s **Gig0/1** connected to Right Router’s **Gig0/1**
-  * IPs: **Left Gig0/1: 10.10.10.1**, **Right Gig0/1: 10.10.10.2**
-
-* **x1 More Switch (2960)**
-
-  * Right Router’s **Gig0/0** (IP: 210.100.100.1) connected to this switch
+  * Left Router’s **Gig0/1** <--> Right Router’s **Gig0/1** (IPs: 10.10.10.1 ↔ 10.10.10.2)
+  * Right Router’s **Gig0/0** connects to server-side switch (IP: 210.100.100.1)
 
 * **x1 Server**
 
-  * Connected to the second switch
-  * IP: **210.100.100.2**
+  * IP: 210.100.100.2, connected to switch on the right
 
-> 🔁 *Routing between routers is assumed to be configured using either static routes or RIP.*
-
----
-
-### **Configuration Steps (Right Router - Applying Standard ACL):**
-
-1. `en` – Enters privileged EXEC mode
-2. `config t` – Enters global configuration mode
-3. `access-list 10 deny host 200.100.100.2`
-
-   * Denies all packets from PC1
-   * **Note**: Access-list number `10` is used because standard ACLs must be numbered in the range `1–99`.
-4. `access-list 10 permit any` – Allows all other IPs
-5. `interface gig0/1` – Interface facing Left Router
-6. `ip access-group 10 in` – Applies ACL 10 inbound
-7. `exit`
-8. `do write` – Saves the configuration
+> 🛠 *Routing (Static or RIP) is assumed to be pre-configured for connectivity.*
 
 ---
 
-### **Verification:**
+#### **Configuration Steps (Left Router - Applying Extended ACL):**
 
-* **PC1**: `ping`, `ftp`, `http://210.100.100.2` → ❌ **Blocked**
-* **PC2–PC4**: All services → ✅ **Allowed**
+Enter the following commands on the **Left Router**:
+
+1. **`en`**
+
+   * **Explanation**: Enters privileged EXEC mode.
+   * **Purpose**: Allows router configuration.
+
+2. **`config t`**
+
+   * **Explanation**: Enters global configuration mode.
+   * **Purpose**: Prepares router for changes.
+
+3. **`access-list 108 deny tcp host 200.100.100.2 host 210.100.100.2 eq www`**
+
+   * **Explanation**: Denies HTTP traffic (TCP port 80) from **PC1** to the Server.
+   * **Note**: `eq www` is equivalent to `eq 80`, which represents the HTTP service.
+
+4. **`access-list 108 deny tcp host 200.100.100.3 host 210.100.100.2 eq 21`**
+
+   * **Explanation**: Denies FTP traffic (TCP port 21) from **PC2** to the Server.
+   * **Note**: FTP uses port 21 by default.
+
+5. **`access-list 108 deny icmp host 200.100.100.4 host 210.100.100.2`**
+
+   * **Explanation**: Denies ICMP traffic (ping) from **PC3** to the Server.
+   * **Note**: Here, protocol is explicitly set to `icmp` instead of `tcp`.
+
+6. **`access-list 108 permit ip any any`**
+
+   * **Explanation**: Allows all other IP traffic not explicitly denied.
+   * **Purpose**:
+
+     * The **first `any`** means any source IP.
+     * The **second `any`** means any destination IP.
+     * **Why it's used**: Without this line, all remaining traffic would be implicitly denied (default behavior of ACLs).
+
+7. **`interface gig0/0`**
+
+   * **Explanation**: Enters the interface receiving traffic from the PC LAN.
+   * **Purpose**: Correct interface to filter traffic before it’s routed.
+
+8. **`ip access-group 108 in`**
+
+   * **Explanation**: Applies ACL 108 in the inbound direction.
+   * **Purpose**: Ensures filtering takes place as traffic enters from PCs.
+
+9. **`exit`** and **`do write`**
+
+   * **Explanation**: Exit configuration mode and save changes.
+   * **Purpose**: Finalize and store ACL configuration.
+
+> 📌 **Note**: Access-list number **`108`** is used because **extended access lists** must be numbered in the range **100 to 199**. Unlike standard ACLs (1–99), extended ACLs allow filtering based on **source IP, destination IP, protocol, and port number** — enabling precise control.
 
 ---
 
-### **Summary:**
+#### **Verification Steps (By Host and Service):**
 
-* Standard ACL applied on Right Router (`Gig0/1 in`)
-* Denied: PC1
-* Others allowed
-* ACL 10 used (Standard range: 1–99)
+Perform the following tests from each relevant PC:
 
 ---
 
-## **Objective 3: Configuration and Verification of an Extended Access List for Permit and Deny to a Remote Server (HTTP / FTP / ICMP)**
+##### ✅ **From PC1 (200.100.100.2)**
+
+* **Tested Service**: HTTP
+* **Method**:
+
+  * Navigate to **Desktop → Web Browser**
+  * Type `http://210.100.100.2`
+* **Result**: ❌ **Unreachable**
+* **Explanation**: Blocked by ACL rule denying HTTP (port 80) traffic from this host.
+* **Other Services**: FTP and ping are accessible.
 
 ---
 
-### **Configuration Steps (Left Router - Applying Extended ACL):**
+##### ✅ **From PC2 (200.100.100.3)**
 
-1. `en`
-2. `config t`
-3. `access-list 108 deny tcp host 200.100.100.2 host 210.100.100.2 eq www`
+* **Tested Service**: FTP
+* **Method**:
 
-   * Denies HTTP (port 80) from PC1
-   * `eq www` = `eq 80`
-4. `access-list 108 deny tcp host 200.100.100.3 host 210.100.100.2 eq 21`
-
-   * Denies FTP from PC2
-5. `access-list 108 deny icmp host 200.100.100.4 host 210.100.100.2`
-
-   * Denies ping from PC3
-6. `access-list 108 permit ip any any`
-
-   * Allows all else
-   * First `any`: any source; second `any`: any destination
-7. `interface gig0/0`
-8. `ip access-group 108 in`
-9. `exit`, `do write`
-
-> 📌 **Access-list number `108` is used** because **extended ACLs use number range 100–199**, which allows filtering by protocol and port numbers.
+  * Open **Command Prompt**
+  * Run `ftp 210.100.100.2`
+* **Result**: ❌ **Unreachable**
+* **Explanation**: Blocked by ACL rule denying FTP (port 21) from this host.
+* **Other Services**: HTTP and ping are accessible.
 
 ---
 
-### **Verification:**
+##### ✅ **From PC3 (200.100.100.4)**
 
-* **PC1 (HTTP test via Web Browser)** → ❌ Blocked
-* **PC2 (FTP test via Command Prompt)** → ❌ Blocked
-* **PC3 (Ping via Command Prompt)** → ❌ Blocked
-* **PC4** → ✅ All services allowed
+* **Tested Service**: ICMP (Ping)
+* **Method**:
+
+  * Open **Command Prompt**
+  * Run `ping 210.100.100.2`
+* **Result**: ❌ **Unreachable**
+* **Explanation**: Blocked by ACL rule denying ICMP traffic.
+* **Other Services**: FTP and HTTP are accessible.
 
 ---
 
-### **Summary:**
+##### ✅ **From PC4 (200.100.100.5)**
 
-* Extended ACL applied on Left Router (`Gig0/0 in`)
-* Denied:
+* **Tested Services**: Ping, FTP, HTTP
+* **Method**: Use all services as normal
+* **Result**: ✅ **All Accessible**
+* **Explanation**: This host is not matched by any deny rule, and falls under `permit ip any any`.
 
-  * PC1: HTTP
-  * PC2: FTP
-  * PC3: Ping
-* Allowed: All other traffic
-* ACL 108 used (Extended ACL range: 100–199)
+---
+
+#### **Summary of Objective 3:**
+
+* Configured an **Extended Access Control List (ACL 108)** on the **Left Router’s `Gig0/0`** interface (inbound).
+* Access Denials:
+
+  * **PC1**: Denied HTTP (port 80)
+  * **PC2**: Denied FTP (port 21)
+  * **PC3**: Denied ping (ICMP)
+* All other traffic is explicitly allowed using `permit ip any any`.
+* **Access-list number `108` was used** because **extended ACLs use the number range 100–199**, enabling protocol- and port-level filtering.
+* Verified ACL functionality by testing specific service access per host.
