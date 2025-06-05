@@ -1,7 +1,3 @@
-Absolutely! Here's the final and fully corrected version of **Objective 2**, now including a **note on why the access list number is 10** (due to the valid range 1–99 for standard ACLs):
-
----
-
 ## **LAB Experiment 03**
 
 ### **Objective 2: Configuration and Verification of a Standard Access List for Permit and Deny to a Remote Server**
