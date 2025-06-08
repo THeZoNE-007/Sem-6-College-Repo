@@ -23,8 +23,8 @@ Everything else unmarked is from **Dr. Bharat Jyoti Ranjan Sahoo**.
 5. Types of Pentest - Black, White, & Gray Box
 6. Benefits of Pentest
 7. Tutorials on:
-    -> Bash scripting
-    -> Python scripting
+    > Bash scripting
+    > Python scripting
     -> C programs
 
 ## [2025-01-24 -- linux\_command](#)
