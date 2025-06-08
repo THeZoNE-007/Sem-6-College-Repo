@@ -99,12 +99,12 @@ Editing a file with vi
 8. Managing installed packages
 9. Processes and Services
 10. Managing Networking:
-   - Setting static IP address
-   - Viewing network connections
+    - Setting static IP address
+    - Viewing network connections
 11. Netcat: Swiss Army knife  of TCP/IP Connections
-   - Check to see port listening
-   - Opening cmd shell listener
-   - pushing cmd shell back to listener
+    - Check to see port listening
+    - Opening cmd shell listener
+    - pushing cmd shell back to listener
 12. Automating tasks with cron Jobs
 
 ## [2025-01-31 — dns](#)
