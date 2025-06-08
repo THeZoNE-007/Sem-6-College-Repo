@@ -32,30 +32,30 @@ Everything else unmarked is from **Dr. Bharat Jyoti Ranjan Sahoo**.
 2. Linux file system
 3. Man pages
 4. User privileges
-    - Add a user\
-    - adding user to Sudoers file\
-    - Switch users, use sudo\
-    - create new file / directory\
-    - copy, move, remove files\
-    - add text to a file\
-    - appending text to a file\
+    - Add a user
+    - adding user to Sudoers file
+    - Switch users, use sudo
+    - create new file / directory
+    - copy, move, remove files
+    - add text to a file
+    - appending text to a file
 5. File permissions
 6. Editing files:
-    -> Searching for text
-    -> Editing a file with vi
+    - Searching for text
+    Editing a file with vi
  7. Data manipulation  
-    -> using grep
-    -> using sed
-    -> pattern marking with awk
+    - using grep
+    - using sed
+    - pattern marking with awk
  8. Managing installed packages
 9. Processes and Services
 10. Managing Networking
-    -> Setting static IP address
-    -> Viewing network connections
+    - Setting static IP address
+    - Viewing network connections
 11. Netcat: Swiss Army knife  of TCP/IP Connections
-    -> Check to see port listening
-    -> Opening cmd shell listener
-    -> pushing cmd shell back to listener
+    - Check to see port listening
+    - Opening cmd shell listener
+    - pushing cmd shell back to listener
 12. Automating tasks with cron Jobs
 
 ## [2025-01-27 — metasploit](#)
@@ -68,11 +68,11 @@ Everything else unmarked is from **Dr. Bharat Jyoti Ranjan Sahoo**.
 ## [2025-01-27 — MS08-067](#)
 1. ms08-067
 2. Details:
-   -> Discovered
-   -> CVE Identifier
-   -> Vuln type
-   -> Cause of Vuln
-   -> Patch info
+   - Discovered
+   - CVE Identifier
+   - Vuln type
+   - Cause of Vuln
+   - Patch info
 3. Steps 1,2,3,4,5,6,&7 - Demonstration of Attack
 4. Type of Shell - Bind & Reverse
 
@@ -81,34 +81,34 @@ Everything else unmarked is from **Dr. Bharat Jyoti Ranjan Sahoo**.
 2. Linux file system
 3. Man pages
 4. User privileges
-   -> Add a user
-   -> adding user to Sudoers file
-   -> Switch users, use sudo
-   -> create new file / directory
-   -> copy, move, remove files
-   -> add text to a file
-   -> appending text to a file
+   - Add a user
+   - adding user to Sudoers file
+   - Switch users, use sudo
+   - create new file / directory
+   - copy, move, remove files
+   - add text to a file
+   - appending text to a file
 5. File permissions
 6. Editing files
 Searching for text
 Editing a file with vi
 7. Data manipulation
-   -> using grep
-   -> using sed
-   -> pattern marking with awk
+   - using grep
+   - using sed
+   - pattern marking with awk
 8. Managing installed packages
 9. Processes and Services
 10. Managing Networking:
-   -> Setting static IP address
-   -> Viewing network connections
+   - Setting static IP address
+   - Viewing network connections
 11. Netcat: Swiss Army knife  of TCP/IP Connections
-   -> Check to see port listening
-   -> Opening cmd shell listener
-   -> pushing cmd shell back to listener
+   - Check to see port listening
+   - Opening cmd shell listener
+   - pushing cmd shell back to listener
 12. Automating tasks with cron Jobs
 
 ## [2025-01-31 — dns](#)
--> Entire flow of “How DNS works?”
+- Entire flow of “How DNS works?”
 
 ## [2025-01-31 — smb\_netbios](#)
 1. workspace
@@ -118,21 +118,21 @@ Editing a file with vi
 ## [2025-02-03 — modules\_metasploit](#)
 1. show cmd
 2. auxiliary modules:
-   -> scanner
-   -> admin
-   -> dos
-   -> fuzzers
-   -> gather
-   -> spoof
+   - scanner
+   - admin
+   - dos
+   - fuzzers
+   - gather
+   - spoof
 3. Common auxiliary modules
-   -> open port scan
-   -> enumerating SMB shares
-   -> Brute-forcing SMB Login
-   -> SMB vuln scan
-   -> SYN Flood atk
-   -> Apache DOS (Range Header atk)
-   -> SMBLoris atk (Win SMB Dos)
-   -> Types of DoS
+   - open port scan
+   - enumerating SMB shares
+   - Brute-forcing SMB Login
+   - SMB vuln scan
+   - SYN Flood atk
+   - Apache DOS (Range Header atk)
+   - SMBLoris atk (Win SMB Dos)
+   - Types of DoS
 4. SYN FLood (DoS)
 5. Apache Web Server via Memory exhaustion (DoS)
 6. Windows SMB Resource Exhaustion
@@ -145,13 +145,13 @@ Editing a file with vi
 
 ## [2025-02-24 — info\_gathering](#)
 1. OSINT gathering
-   -> netcraft
-   -> whois lookups
-   -> DNS Reconnaissance
-       -> Nslookup
-       -> Host
-       -> Zone Transfers
-   -> Searchig Email Address
+   - netcraft
+   - whois lookups
+   - DNS Reconnaissance
+       - Nslookup
+       - Host
+       - Zone Transfers
+   - Searchig Email Address
      
 ## [2025-03-04 — web application scanning](#)
 1. robots.txt
@@ -159,9 +159,9 @@ Editing a file with vi
 3. cross-site sripting (XSS) exploit — buffer overflow
 4. An example C lang. code for Buffer Overflow atk
 5. Exploiting Buffer Overflow
-   -> Fuzzing i/p
-   -> Finding offset using gdb
-   -> example python code
+   - Fuzzing i/p
+   - Finding offset using gdb
+   - example python code
 
 ## [2025-03-05 — maltego](#)
 1. Introduction
@@ -172,28 +172,28 @@ Editing a file with vi
 
 ## [2025-03-06 — Buffer Overflow & SQL injection](#)
 1. What is BO?  
-   -> Stack vs Heap OF
-   -> Practical Exercises
-   -> Real-World Exploitation Scenarios
+   - Stack vs Heap OF
+   - Practical Exercises
+   - Real-World Exploitation Scenarios
 2. SQL Injection (SQLi)  
-   -> Types of SQL Injection
-   -> How to Identify SQL Injection
-   -> Exploiting SQL Injection
-   -> Writing an SQL Injection Exploit (Python)
-   -> How to Prevent SQL Injection
-   -> Steps to Set Up the SQL Injection Lab
-   -> Performing SQL Injection
-   -> Fixing the Vulnerability
+   - Types of SQL Injection
+   - How to Identify SQL Injection
+   - Exploiting SQL Injection
+   - Writing an SQL Injection Exploit (Python)
+   - How to Prevent SQL Injection
+   - Steps to Set Up the SQL Injection Lab
+   - Performing SQL Injection
+   - Fixing the Vulnerability
 3. APPENDIX 1 - writing proper kali & msf cmds
 
 ## [2025-03-07 — nmap](#)
 1. Port scanning
-   -> manual port scan
-   -> nmap port scan
-       -> syn scan
-       -> version scan
-       -> udp scan
-       -> scanning specific port
+   - manual port scan
+   - nmap port scan
+       - syn scan
+       - version scan
+       - udp scan
+       - scanning specific port
 
 ## [2025-03-10 — tcpdump (includes Wireshark)](#)
 1. Intro
@@ -213,7 +213,7 @@ Editing a file with vi
 15. Conclusion
 
 ## [2025-03-10 — Assignment tcpdump](#)
--> Contains questions related to tcpdump and wireshark
+- Contains questions related to tcpdump and wireshark
 
 ## [2025-03-10 — nessus](#)
 1. Installation
@@ -226,13 +226,13 @@ Editing a file with vi
 
 ## [2025-03-12 -- web_app_exp](#)
 1. Web Application Scanning
-   -> Nikto
-   -> Attacking XAMPP
-   -> Default Credentials of XAMPP 1.7.3 and earlier ver
+   - Nikto
+   - Attacking XAMPP
+   - Default Credentials of XAMPP 1.7.3 and earlier ver
 2. Manual Analysis
-   -> Explore strange port
-   -> Finding valid usernames
-   -> Summary
+   - Explore strange port
+   - Finding valid usernames
+   - Summary
 3. Web Application Exploitation
 4. Surveying the Webspace
 5. Concept of Robots.txt
@@ -246,20 +246,20 @@ Editing a file with vi
 
 ## [2025-03-13 — DNS_Working](#)
 1. ARP Cache Poisoning
-   -> Steps to Perform ARP Cache Poisoning Using Arpspoof
+   - Steps to Perform ARP Cache Poisoning Using Arpspoof
 2. How DNS Works?
-   -> DNS Resolution Example
-   -> DNS Resolution Process
-   -> DNS Cache Poisoning Attack
-   -> Setting Up DNS Spoofing in Kali
-   -> Demonstrating the Attack
-   -> DNS SUMMARY
+   - DNS Resolution Example
+   - DNS Resolution Process
+   - DNS Cache Poisoning Attack
+   - Setting Up DNS Spoofing in Kali
+   - Demonstrating the Attack
+   - DNS SUMMARY
 3. SSL Attacks Overview
-   -> SSL Basics
-   -> SSL Man in the Middle
-   -> SSL Man-in-the-Middle Attack
-   -> SSL Stripping Attack
-   -> Defending Against SSL Attacks
+   - SSL Basics
+   - SSL Man in the Middle
+   - SSL Man-in-the-Middle Attack
+   - SSL Stripping Attack
+   - Defending Against SSL Attacks
 4. Assignment
 
 ## [2025-03-25 — Ch 08 - Pentesting_Exploitation](#)
@@ -270,9 +270,9 @@ Editing a file with vi
 5. Exploiting Open phpMyAdmin
 6. Exercise questions
 7. Downloading a File with TFTP
-   -> Overview
-   -> Steps
-   -> Troubleshooting Steps
+   - Overview
+   - Steps
+   - Troubleshooting Steps
 8. Summary
 
 ## [2025-03-31 — Exploiting phpMyadmin](#)
@@ -287,16 +287,89 @@ Editing a file with vi
 
 ## [2025-04-03 — Password Attacks](#)
 1. Password SAFETY
-   -> Challenges
-   -> Mitigation
-   -> Common mistakes
+   - Challenges
+   - Mitigation
+   - Common mistakes
 2. Offline Password Attacks/ Find Hash
-   -> Zervit 0.4
-   -> SLMail 5.5
-   -> 3Com TFTP 2.0.1 (Optional for today class)
-   -> Testing port 3232/ Zervit
+   - Zervit 0.4
+   - SLMail 5.5
+   - 3Com TFTP 2.0.1 (Optional for today class)
+   - Testing port 3232/ Zervit
 3. FINDING A SENSITIVE FILE boot.ini
 4. Downloading the Windows SAM
 5. Finding Valid Usernames to use the VRFY SMTP command
+
+## [2025-04-08 — Hydra Tool](#)
+1. Introduction to Hydra
+2. How Kali Linux interact with Hydra & xHydra
+3. Syntax Breakdown For Hydra
+4. Relation Between IMAP and Hydra
+5. Brute Force SSH Protocol Using Hydra
+6. Brute Force MySQL Using Hydra
+
+## [2025-04-08 — search and destroy using Burp Suite and Xhydra](#)
+1. File upload exploit vuln
+2. Burpsuite
+3. XSS
+4. IDOR
+5. Port Swigger
+6. Proxy Tool
+   - Proxy settings
+   - Foxyproxy
+7. Interception
+8. Burpsuite setup in Browser
+9. Repeater tool of Burpsuite
+10. XSS vuln
+11. Types of XSS
+12. Password attack using xHydra in Kali Linux
+13. Protecting against xHydra Attacks
+
+## [2025-05-05 — Chapter 10_Browser and PDF_Exploitation_Workshop_Notes](#)
+1. Workshop Notes: Browser Exploitation using Aurora Vulnerability
+2. Browser Exploitation using Aurora Vulnerability:detailed notes
+3. PDF Exploits – Metasploit Workshop Note
+
+## [2025-05-06 — Chapter 10_Java autopawn winmap](#)
+1. Java autopawn using msf  
+2. Signed Java Applet  
+3. Winamp
+
+## [2025-05-06 — Chapter 11 SET Attack 1](#)
+1. Social Engineering Attacks – Study Notes  
+2. Common Social Engineering Techniques  
+3. Real-World Pentesting Examples  
+4. SET Spear-Phishing Attack Cheat Sheet
+
+## [2025-05-08 — Chapter 11 SET Attack 2](#)
+1. Web Attacks  
+   - The Social-Engineering Attacks
+   - The Java Applet Attack
+   - The Metasploit Browser Exploit
+   - The Tabnabbing Attack
+   - The Credential Harvester Attack
+2. Class Assignment 1: Credential Harvester Attack  
+3. Class Assignment 2: Demonstrate Mass Email Attack (Spear Phishing) using SET  
+4. Optional Challenge for Students
+
+## [2025-05-12 — Bypass_Antivirus_Workshop_Notes](#)
+   - Workshop Content
+
+## [2025-05-13 -- Chapter 13 - Post Exploitation 1](#)
+   - Steps by Step guide !! : 1 to 12
+
+## [2025-05-14 -- Chapter 13 - Post Exploitation 2](#)
+1. Post-Exploitation Techniques  
+   - Windows: Enumerating Logged-On Users
+   - Windows: Using Railgun for API Access
+   - Windows: Automated Privilege Escalation
+2. Udev Privilege Escalation on Linux
+
+## [2025-05-15 -- Ch 15 Using airodump](#)
+1. Objective  
+2. Prerequisites
+3. Setting Up Monitor Mode on a Specific Channel
+4. Troubleshooting "Fixed Channel: -1" Error
+5. Capturing Wireless Traffic on a Specific Channel
+6. Important Notes
 
 
