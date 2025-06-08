@@ -8,7 +8,7 @@ Everything else unmarked is from **Dr. Bharat Jyoti Ranjan Sahoo**.
 
 # INDEX — PTW GitHub Folder
 
-## [2025-01-22 -- intro\_ptw](#)
+## [2025-01-22 -- intro\_ptw](https://github.com/THeZoNE-007/Sem-6-College-Repo/blob/main/PTW/2025-01-22%20(RP)%20--%20Intro%20to%20PTW%20%26%20Basic%20Script%20writing/intro_ptw.pdf)
 1. Purpose of Pentest
 2. Stages of Pentest - 1,2,3,&4
 3. Vulnerability Assessment VS Pen Test
