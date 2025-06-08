@@ -32,13 +32,13 @@ Everything else unmarked is from **Dr. Bharat Jyoti Ranjan Sahoo**.
 2. Linux file system
 3. Man pages
 4. User privileges
-    > Add a user\
-    > adding user to Sudoers file\
-    > Switch users, use sudo\
-    > create new file / directory\
-    > copy, move, remove files\
-    > add text to a file\
-    > appending text to a file\
+    - Add a user\
+    - adding user to Sudoers file\
+    - Switch users, use sudo\
+    - create new file / directory\
+    - copy, move, remove files\
+    - add text to a file\
+    - appending text to a file\
 5. File permissions
 6. Editing files:
     -> Searching for text
