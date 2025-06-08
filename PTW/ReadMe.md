@@ -24,21 +24,21 @@ Everything else unmarked is from **Dr. Bharat Jyoti Ranjan Sahoo**.
 6. Benefits of Pentest
 7. Tutorials on:
     > Bash scripting\
-    > Python scripting
-    -> C programs
+    > Python scripting\
+    > C programs
 
 ## [2025-01-24 -- linux\_command](#)
 1. Linux cmd line
 2. Linux file system
 3. Man pages
 4. User privileges
-    -> Add a user
-    -> adding user to Sudoers file
-    -> Switch users, use sudo
-    -> create new file / directory
-    -> copy, move, remove files
-    -> add text to a file
-    -> appending text to a file
+    > Add a user\
+    > adding user to Sudoers file\
+    > Switch users, use sudo\
+    > create new file / directory\
+    > copy, move, remove files\
+    > add text to a file\
+    > appending text to a file\
 5. File permissions
 6. Editing files:
     -> Searching for text
