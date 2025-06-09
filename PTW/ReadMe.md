@@ -152,6 +152,7 @@ Editing a file with vi
        - Host
        - Zone Transfers
    - Searchig Email Address
+       - theHarvester
      
 ## [2025-03-04 — web application scanning](https://github.com/THeZoNE-007/Sem-6-College-Repo/blob/main/PTW/2025-03-04%20--%20Web%20App%20Scanning/Web%20application%20scanning.pdf)
 1. robots.txt
